@@ -1,6 +1,6 @@
 ## Welcome to DistributedClocks!
 
-A simple landing page, powered by Jekyll.
+Making distributed systems make sense.
 
 ### Why?
 
@@ -32,4 +32,6 @@ And that's it! The management and ordering of vector clocks will be handled acco
 - [C++](https://github.com/DistributedClocks/CppVector)
 - [Java](https://github.com/DistributedClocks/JVector)
 - [Golang](https://github.com/DistributedClocks/GoVector)
+
+This page powered by Jekyll.
 
