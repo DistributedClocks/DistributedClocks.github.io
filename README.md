@@ -1,27 +1,35 @@
 ## Welcome to DistributedClocks!
 
-Sample landing page, powered by Jekyll.
+A simple landing page, powered by Jekyll.
 
-### Markdown
+### Why?
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+Profiling and instrumenting distributed systems is tricky. The nature of failures in a distributed system makes them generally difficult to reproduce, and therefore analyze. 
 
-```markdown
-Syntax highlighted code block
+DistributedClocks is a movement towards making this less painful. We expose a set of vector clock libraries, based on a concept of Leslie Lamport, which allow users to determine a total ordering of events in a complicated and choatic environment.
 
-# Header 1
-## Header 2
-### Header 3
+### How to use
 
-- Bulleted
-- List
+Let's assume you already have a distributed system up and running. Naturally, these systems will be communicating with one other. Immediately before and after any communication-related calls, simply add a single line of code.
 
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+A typical workflow will look like this:
+```
+1. Have a data payload
+2. buffer = PrepareSend(payload)
+3. Send this buffer using the network call of your choice
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+And on the receiving side....
+```
+1. Receive the buffer
+2. payload = UnpackReceive(buffer)
+```
+And that's it! The management and ordering of vector clocks will be handled accordingly.
+
+### Supported Libraries
+
+- [C](https://github.com/DistributedClocks/CVector)
+- [C++](https://github.com/DistributedClocks/CppVector)
+- [Java](https://github.com/DistributedClocks/JVector)
+- [Golang](https://github.com/DistributedClocks/GoVector)
+
