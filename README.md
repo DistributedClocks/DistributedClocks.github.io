@@ -24,7 +24,9 @@ And on the receiving side....
 1. Receive the buffer
 2. payload = UnpackReceive(buffer)
 ```
-And that's it! The management and ordering of vector clocks will be handled accordingly.
+And that's it! The management and ordering of vector clocks will be handled accordingly. 
+
+One the system execution is complete, we recommend visualizing it with [Shiviz](https://bestchai.bitbucket.io/shiviz/)
 
 ### Supported Libraries
 
